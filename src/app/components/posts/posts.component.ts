@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService, Post } from '../../services/api.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.css'],
+  imports: [CommonModule],
 })
 export class PostsComponent implements OnInit {
   posts: Post[] = [];
