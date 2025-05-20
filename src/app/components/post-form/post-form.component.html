@@ -1,0 +1,38 @@
+<div class="container mt-4">
+  <h2>Create Post</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        [(ngModel)]="post.title"
+        name="title"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="content" class="form-label">Content</label>
+      <textarea
+        class="form-control"
+        id="content"
+        [(ngModel)]="post.content"
+        name="content"
+        required
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="userId" class="form-label">User ID</label>
+      <input
+        type="number"
+        class="form-control"
+        id="userId"
+        [(ngModel)]="post.userId"
+        name="userId"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
