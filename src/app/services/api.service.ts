@@ -34,7 +34,8 @@ export interface Comment {
   providedIn: 'root',
 })
 export class ApiService {
-  private apiUrl = 'http://localhost:3000';
+  //private apiUrl = 'http://localhost:3000';
+  private apiUrl = 'https://nodejs-postgresql-backend.onrender.com';
 
   constructor(private http: HttpClient) {}
 
@@ -52,5 +53,36 @@ export class ApiService {
     userId: number;
   }): Observable<Post> {
     return this.http.post<Post>(`${this.apiUrl}/posts`, post);
+  }
+
+  updatePost(
+    id: number,
+    post: { title: string; content: string }
+  ): Observable<Post> {
+    return this.http.put<Post>(`${this.apiUrl}/posts/${id}`, post);
+  }
+
+  deletePost(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/posts/${id}`);
+  }
+
+  getComments(): Observable<Comment[]> {
+    return this.http.get<Comment[]>(`${this.apiUrl}/comments`);
+  }
+
+  createComment(comment: {
+    content: string;
+    userId: number;
+    postId: number;
+  }): Observable<Comment> {
+    return this.http.post<Comment>(`${this.apiUrl}/comments`, comment);
+  }
+
+  updateComment(id: number, comment: { content: string }): Observable<Comment> {
+    return this.http.put<Comment>(`${this.apiUrl}/comments/${id}`, comment);
+  }
+
+  deleteComment(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/comments/${id}`);
   }
 }
