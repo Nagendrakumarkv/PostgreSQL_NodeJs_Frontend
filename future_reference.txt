@@ -498,7 +498,15 @@ Job Prep: Practice system design and coding interviews (LeetCode, HackerRank).
 By following this plan, you’ll gain proficiency in PostgreSQL and AWS, integrate them with your Angular/Node.js expertise, and build a production-ready full-stack app, positioning you as a competent full-stack developer. If you need specific resources or help with any topic, let me know!
 
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+PWA
+
+ng add @angular/pwa --force  
+npm i @angular/service-worker --force
+npm i http-server --force
+ng build
+http-server -p 8080 -c-1 dist/frontend
 
 
 
