@@ -26,5 +26,17 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "backend-api",
+      "urls": ["https://nodejs-postgresql-backend.onrender.com"],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxAge": "1h",
+        "maxSize": 20,
+        "timeout": "5s"
+      }
+    }
   ]
 }
